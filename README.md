@@ -13,7 +13,7 @@
 
 </p>
 
-This is the Python code that was used for producting the numerical results shown in [our paper](https://arxiv.org/abs/2502.19030).
+This is the Python code used to produce the numerical results presented in [our paper](https://arxiv.org/abs/2502.19030).
 
 If you use this code, please cite
 
@@ -27,6 +27,7 @@ We have confirmed that our code works in the following environment.
 
 - Python 3.10.15
 - numpy 1.26.0
+- pycountry-convert 0.7.2
 - requests 2.32.3
 
 ## OS
@@ -63,28 +64,17 @@ This will result in the following directory structure:
 
 ### Sampling and estimation in empirical hypergraphs
 
-Please see the notebook [hrw_sim.ipynb](https://github.com/kazuibasou/hyper-dk-series/blob/main/py/1_basics.ipynb) and [2_randomization.ipynb](https://github.com/kazuibasou/hyper-dk-series/blob/main/py/2_randomization.ipynb) located in the folder `hyper-dk-series/py/` for instructions on using the hyper dk-series in Python.
+Please see the notebook [*hrw_sim.ipynb*](https://github.com/kazuibasou/hrw_sampling/blob/main/hrw_sim.ipynb) for instructions on running numerical simulations on these five empirical hypergraphs.
 
-## Benchmark (October 2024)
+### Sampling and estimation in OpenAlex
 
-We measured the runtime (in seconds) for generating a single randomized instance using the hyper dK-series implemented in Python with Numba.  
-We used the same four empirical hypergraph datasets as in [[K. Nakajima et al. *IEEE TNSE* (2021)]](https://doi.org/10.1109/TNSE.2021.3133380): `drug`, `Enron`, `primary-school`, and `high-school`. 
+Please see the notebook [*hrw_openalex.ipynb*](https://github.com/kazuibasou/hrw_sampling/blob/main/hrw_openalex.ipynb) for instructions on performing a random walk on the [OpenAlex](https://openalex.org/) database.
 
-While the hyper dK-series with *d<sub>v</sub>* = 2 or 2.5 requires more time due to frequent hyperedge rewiring attempts, **the current version is 20–30 times faster than the previous version, which did not employ Numba.**
+# License
 
-| (*d<sub>v</sub>*, *d<sub>e</sub>*) | drug | Enron | primary-school | high-school |
-| ---- | ---- | ---- | ---- | ---- |
-| (0, 0) | 0.02 | 0.008 | 0.06 | 0.05 |
-| (1, 0) | 0.008 | 0.005 | 0.03 | 0.02 |
-| (2, 0) | 5.6 | 3.1 | 23.6 | 9.7 |
-| (2.5, 0) | 101 | 42.7 | 709 | 188 |
-| (0, 1) | 0.02 | 0.008 | 0.16 | 0.05 |
-| (1, 1) | 0.008 | 0.005 | 0.03 | 0.02 |
-| (2, 1) | 5.1 | 1.9 | 21.1 | 7.7 |
-| (2.5, 1) | 97 | 40.0 | 605 | 166 |
+This source code is released under the MIT License, see LICENSE.txt.
 
-## Application: Rich club detection
+# Contact
+- Kazuki Nakajima (https://kazuibasou.github.io/)
 
-We define a higher-order rich club in which the nodes with the largest degrees are densely interconnected by hyperedges. 
-Please see the notebook [3_rich_club.ipynb](https://github.com/kazuibasou/hyper-dk-series/blob/main/py/3_rich_club.ipynb) located in the folder `hyper-dk-series/py/` for instructions on the detection of higher-order rich clubs in Python.
-Please also see [[K. Nakajima et al. *Scientometrics* (2023)]](https://doi.org/10.1007/s11192-022-04621-1) for details on the detection method.
+(Last update: April 2025)
