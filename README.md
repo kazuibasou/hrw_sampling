@@ -1,5 +1,4 @@
 <h1 align="center">
-Hyper dK-series <br/>  
 <i>Sampling nodes and hyperedges via random walks on large hypergraphs</i>
 </h1>
 
